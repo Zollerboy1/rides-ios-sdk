@@ -8,6 +8,7 @@
 
 import XCTest
 @testable import UberCore
+import UIKit
 
 class DeeplinkManagerTests: XCTestCase {
     private var deeplinkManager: DeeplinkManager!
@@ -102,20 +103,20 @@ class DeeplinkManagerTests: XCTestCase {
 
     private func openDeeplink(_ deeplink: Deeplinking, completion: @escaping DeeplinkCompletionHandler) {
         deeplinkManager.open(deeplink, completion: completion)
-        NotificationCenter.default.post(Notification(name: Notification.Name.UIApplicationDidEnterBackground))
+        NotificationCenter.default.post(Notification(name: UIApplication.didEnterBackgroundNotification))
     }
 
     private func openDeeplinkWithSuccessfulPrompt(_ deeplink: Deeplinking, completion: @escaping DeeplinkCompletionHandler) {
         deeplinkManager.open(deeplink, completion: completion)
-        NotificationCenter.default.post(Notification(name: Notification.Name.UIApplicationWillResignActive))
-        NotificationCenter.default.post(Notification(name: Notification.Name.UIApplicationDidBecomeActive))
-        NotificationCenter.default.post(Notification(name: Notification.Name.UIApplicationDidEnterBackground))
+        NotificationCenter.default.post(Notification(name: UIApplication.willResignActiveNotification))
+        NotificationCenter.default.post(Notification(name: UIApplication.didBecomeActiveNotification))
+        NotificationCenter.default.post(Notification(name: UIApplication.didEnterBackgroundNotification))
     }
 
     private func openDeeplinkWithCancelledPrompt(_ deeplink: Deeplinking, completion: @escaping DeeplinkCompletionHandler) {
         deeplinkManager.open(deeplink, completion: completion)
-        NotificationCenter.default.post(Notification(name: Notification.Name.UIApplicationWillResignActive))
-        NotificationCenter.default.post(Notification(name: Notification.Name.UIApplicationDidBecomeActive))    }
+        NotificationCenter.default.post(Notification(name: UIApplication.willResignActiveNotification))
+        NotificationCenter.default.post(Notification(name: UIApplication.didBecomeActiveNotification))    }
 }
 
 private class TestDeeplink: Deeplinking {

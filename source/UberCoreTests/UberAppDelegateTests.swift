@@ -23,6 +23,7 @@
 import XCTest
 import CoreLocation
 @testable import UberCore
+import UIKit
 
 class UberAppDelegateTests : XCTestCase {
     
@@ -104,10 +105,10 @@ class UberAppDelegateTests : XCTestCase {
         }
         let testSourceApplication = "testSource"
         let testAnnotation = "annotation"
-        var launchOptions = [UIApplicationLaunchOptionsKey: Any]()
-        launchOptions[UIApplicationLaunchOptionsKey.url] = testURL as Any
-        launchOptions[UIApplicationLaunchOptionsKey.sourceApplication] = testSourceApplication as Any
-        launchOptions[UIApplicationLaunchOptionsKey.annotation] = testAnnotation as Any
+        var launchOptions = [UIApplication.LaunchOptionsKey: Any]()
+        launchOptions[UIApplication.LaunchOptionsKey.url] = testURL as Any
+        launchOptions[UIApplication.LaunchOptionsKey.sourceApplication] = testSourceApplication as Any
+        launchOptions[UIApplication.LaunchOptionsKey.annotation] = testAnnotation as Any
         
         let urlClosure: ((UIApplication, URL, String?, Any?) -> Bool) = { application, url, source, annotation in
             XCTAssertEqual(application, testApp)
@@ -137,8 +138,8 @@ class UberAppDelegateTests : XCTestCase {
         loginManagerMock.didBecomeActiveClosure = didBecomeActiveClosure
         appDelegate.loginManager = loginManagerMock
 
-        NotificationCenter.default.post(name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
-        NotificationCenter.default.post(name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.post(name: UIApplication.willEnterForegroundNotification, object: nil)
+        NotificationCenter.default.post(name: UIApplication.didBecomeActiveNotification, object: nil)
         
         waitForExpectations(timeout: 0.2)
     }

@@ -23,6 +23,7 @@
 //  THE SOFTWARE.
 
 import UberCore
+import UIKit
 
 /**
  A RideRequesting object for requesting a ride via the RideRequestViewController

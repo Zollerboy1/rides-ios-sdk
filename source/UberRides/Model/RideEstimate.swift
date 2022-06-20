@@ -23,6 +23,7 @@
 //  THE SOFTWARE.
 
 import UberCore
+import Foundation
 
 // MARK: RideEstimate
 

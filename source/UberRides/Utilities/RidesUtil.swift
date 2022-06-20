@@ -25,6 +25,8 @@
 
 import Foundation
 import CoreLocation
+import CoreGraphics
+import CoreText
 import UberCore
 
 class FontUtil {

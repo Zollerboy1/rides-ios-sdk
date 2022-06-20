@@ -24,6 +24,8 @@
 
 // MARK: RideMap
 
+import Foundation
+
 /**
  *  Visual representation of a ride request, only available after a request is accepted.
  */

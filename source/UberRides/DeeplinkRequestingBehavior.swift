@@ -23,6 +23,7 @@
 //  THE SOFTWARE.
 
 import UberCore
+import Foundation
 
 @objc(UBSDKDeeplinkRequestingBehavior) public class DeeplinkRequestingBehavior : NSObject, RideRequesting {
     private var fallbackType: DeeplinkFallbackType?

@@ -22,6 +22,7 @@
 
 
 @testable import UberCore
+import UIKit
 
 class LoginManagerPartialMock: LoginManager {
     var executeLoginClosure: ((AuthenticationCompletionHandler?) -> ())?
@@ -64,8 +65,8 @@ class LoginManagerPartialMock: LoginManager {
     }
 
     @available(iOS 9.0, *)
-    public func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
-        let sourceApplication = options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String
+    public func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
+        let sourceApplication = options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String
         let annotation = options[.annotation] as Any?
 
         return application(app, open: url, sourceApplication: sourceApplication, annotation: annotation)

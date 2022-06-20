@@ -23,6 +23,7 @@
 //  THE SOFTWARE.
 
 import UberCore
+import UIKit
 
 /**
 Possible Styles for the ModalViewController

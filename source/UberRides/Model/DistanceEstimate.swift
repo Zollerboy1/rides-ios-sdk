@@ -25,6 +25,7 @@
 // MARK: DistanceEstimate
 
 import UberCore
+import Foundation
 
 /**
  *  Estimate information on an Uber trip.

@@ -10,15 +10,10 @@ This [Swift library](https://developer.apple.com/library/ios/documentation/Gener
 
 ## Installing the Uber Rides SDK
 
-To install the Uber Rides SDK, you may use [CocoaPods](http://cocoapods.org), [Carthage](https://github.com/Carthage/Carthage), or add it to your project manually
+To install the Uber Rides SDK, you may use the Swift Package Manager, or add it to your project manually
 
-```ruby
-pod 'UberRides', '~> 0.13'
-```
-
-### Carthage
-```
-github "uber/rides-ios-sdk" ~> 0.13
+```swift
+.package(url: "https://github.com/Zollerboy1/rides-ios-sdk.git", from: "0.13.1")
 ```
 
 ## Getting Started

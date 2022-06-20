@@ -24,6 +24,8 @@
 
 // MARK: PaymentMethods
 
+import Foundation
+
 /**
  *  Internal struct for handling a list of payment methods
  */

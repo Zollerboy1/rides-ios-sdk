@@ -24,6 +24,8 @@
 
 // MARK: RideReceipt
 
+import Foundation
+
 /**
  *  Get the receipt information of a completed request that was made with the request endpoint.
  */
